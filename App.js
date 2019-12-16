@@ -47,6 +47,26 @@ export default class App extends Component {
               <Text style={styles.converterbuttontext}>Dollar</Text>
             </TouchableOpacity>
 
+            <TouchableOpacity style={styles.converterbutton}>
+              <Text style={styles.converterbuttontext}>EURO</Text>
+            </TouchableOpacity> 
+
+            <TouchableOpacity style={styles.converterbutton}>
+              <Text style={styles.converterbuttontext}>POUND</Text>
+            </TouchableOpacity> 
+
+            <TouchableOpacity style={styles.converterbutton}>
+              <Text style={styles.converterbuttontext}>DINAR</Text>
+            </TouchableOpacity> 
+
+            <TouchableOpacity style={styles.converterbutton}>
+              <Text style={styles.converterbuttontext}>YUAN</Text>
+            </TouchableOpacity> 
+
+            <TouchableOpacity style={styles.converterbutton}>
+              <Text style={styles.converterbuttontext}>RIYAL</Text>
+            </TouchableOpacity> 
+
           </View>
 
 
@@ -63,7 +83,8 @@ var currencyPerRupee = {
   POUND: 0.0048,
   EURO: 0.0058,
   DINAR: 0.0019,
-  YUAN: 0.045
+  YUAN: 0.045,
+  RIYAL: 0.024
 }
 
 
@@ -108,7 +129,25 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   converterbuttoncontainer: {
-    
+    flex: "row",
+    flexWrap: "wrap",
+    marginTop: 20,
+    borderColor: "#c1c1c1",
+    borderWidth: 2
+  },
+  converterbutton: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#0A79DE",
+    height: 100,
+    borderWidth: 2,
+    borderColor: "#c1c1c1",
+    width: "33.33%"
+  },
+  converterbuttontext: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight:"bold"
   }
 });
 
