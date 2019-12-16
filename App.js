@@ -17,8 +17,16 @@ export default class App extends Component {
     let result = parseFloat(this.state.inputValue) * currencyPerRupee[currency] 
 
     this.setState({resultValue : result.toFixed(2)})
-    
   }
+
+  clearpressed = () => {
+    this.setState({
+      resultValue:0.0,
+      inputValue: ""
+    })
+  }
+
+  
 
   render() {
     return (
@@ -71,7 +79,7 @@ export default class App extends Component {
             </View>
 
             <View style={styles.clear}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={this.clearpressed}>
                 <Text style={styles.cleartext}>Clear the value</Text>
               </TouchableOpacity>
             </View>
