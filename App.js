@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert, SafeAreaView } from 'react-native';
 
 export default class App extends Component {
   constructor(props) {
@@ -22,36 +22,16 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <TextInput
-          placeholder = "Amount to be converted"
-          keyboardType = "numeric"
-          value = {this.state.inputValue}
-          selectionColor = "#FFF"
-          onChangeText = { (inputValue) => {this.setState({inputValue})} }
-          style = {styles.inputContainer} 
-        />
-  
-        <TouchableOpacity>
-          <Text style={styles.submit} onPress={() => this.buttonPressed("DOLLAR")}>Dollar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.submit} onPress={() => this.buttonPressed("EURO")}>Euro</Text>
-        </TouchableOpacity>
-        <TouchableOpacity> 
-          <Text style={styles.submit} onPress={() => this.buttonPressed("DINAR")}>Dinar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity> 
-          <Text style={styles.submit} onPress={() => this.buttonPressed("POUND")}>Pounds</Text>
-        </TouchableOpacity>
-        <TouchableOpacity> 
-          <Text style={styles.submit} onPress={() => this.buttonPressed("YUAN")}>Yuan</Text>           
-        </TouchableOpacity>
-
-        <Text>{this.state.inputValue}</Text>
-        <Text>{this.state.resultValue}</Text>
-  
-      </View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.screenview}>
+          <View style={styles.resultcontainer}>
+            <Text style={styles.resultValue}>
+              {this.state.resultValue}
+            </Text>
+          </View>
+        </View>
+      </SafeAreaView>
+      
     );
   }
   
@@ -74,24 +54,29 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 20
   },
-  submit : {
-    backgroundColor : 'red',
-    fontSize: 20,
-    justifyContent : 'center',
-    alignItems : 'center',
-    borderColor: "black",
-    fontWeight: 'bold',
+  screenview: {
     flex: 1
   },
-  inputContainer: {
+  resultcontainer: {
     height: 70,
-    marginTop: 10,
+    marginTop: 20,
     justifyContent: "center",
+    borderColor: "c1c1c1",
+    backgroundColor: "0A79DE",
     alignItems: "center",
-    borderColor: "#c1c1c1",
-    backgroundColor: "0A79DE"
-  }
+    borderWidth: 2
+  },
+  resultValue: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "#FFF"
+  },
+  
+
+
+ 
 });
 
 
