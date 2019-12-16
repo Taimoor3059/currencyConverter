@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert } from 'react-native';
 
 export default class App extends Component {
   constructor(props) {
@@ -11,7 +11,13 @@ export default class App extends Component {
   }
 
   buttonPressed = (currency) => {
+    if (this.state.inputValue === "") {
+      Alert.alert('Enter some value')
+    }
+    let result = parseFloat(this.state.inputValue) * currencyPerRupee[currency] 
 
+    this.setState({resultValue : result.toFixed(2)})
+    
   }
 
   render() {
@@ -27,22 +33,23 @@ export default class App extends Component {
         />
   
         <TouchableOpacity>
-          <Text style={styles.submit} value= "Dollar">Dollar</Text>
+          <Text style={styles.submit} value= "DOLLAR">Dollar</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.submit} value = "Euro">Euro</Text>
+          <Text style={styles.submit} value = "EURO">Euro</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit} value = "Dinar">Dinar</Text>
+          <Text style={styles.submit} value = "DINAR">Dinar</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit} value = "Pound">Pounds</Text>
+          <Text style={styles.submit} value = "POUND">Pounds</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit} value = "Yuan">Yuan</Text>           
+          <Text style={styles.submit} value = "YUAN">Yuan</Text>           
         </TouchableOpacity>
 
         <Text>{this.state.inputValue}</Text>
+        <Text>{this.state.resultValue}</Text>
   
       </View>
     );
