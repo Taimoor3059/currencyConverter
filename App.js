@@ -36,16 +36,16 @@ export default class App extends Component {
           <Text style={styles.submit} onPress={() => this.buttonPressed("DOLLAR")}>Dollar</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.submit} value = "EURO">Euro</Text>
+          <Text style={styles.submit} onPress={() => this.buttonPressed("EURO")}>Euro</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit} value = "DINAR">Dinar</Text>
+          <Text style={styles.submit} onPress={() => this.buttonPressed("DINAR")}>Dinar</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit} value = "POUND">Pounds</Text>
+          <Text style={styles.submit} onPress={() => this.buttonPressed("POUND")}>Pounds</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit} value = "YUAN">Yuan</Text>           
+          <Text style={styles.submit} onPress={() => this.buttonPressed("YUAN")}>Yuan</Text>           
         </TouchableOpacity>
 
         <Text>{this.state.inputValue}</Text>
