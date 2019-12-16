@@ -29,6 +29,18 @@ export default class App extends Component {
               {this.state.resultValue}
             </Text>
           </View>
+
+          <View style={styles.inputcontainer}>
+            <TextInput
+              style={styles.input}
+              placeholder= "Enter Value"
+              value = {this.state.inputValue}
+              keyboardType = "numeric"
+              selectionColor = "#FFF"
+            />
+          </View>
+
+
         </View>
       </SafeAreaView>
       
@@ -73,7 +85,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#FFF"
   },
-  
+
 
 
  
