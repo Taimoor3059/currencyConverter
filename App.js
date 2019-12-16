@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert, SafeAreaView, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 export default class App extends Component {
   constructor(props) {
@@ -22,6 +22,7 @@ export default class App extends Component {
 
   render() {
     return (
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <SafeAreaView style={styles.container}>
         <View style={styles.screenview}>
           <View style={styles.resultcontainer}>
@@ -43,27 +44,27 @@ export default class App extends Component {
 
           <View style={styles.converterbuttoncontainer}>
 
-            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>{this.buttonPressed('DOLLAR')} }>
+            <TouchableOpacity style={styles.converterbutton} onPress= { ()=>this.buttonPressed("DOLLAR") }>
               <Text style={styles.converterbuttontext}>Dollar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.converterbutton}>
+            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("EURO") }>
               <Text style={styles.converterbuttontext}>EURO</Text>
             </TouchableOpacity> 
 
-            <TouchableOpacity style={styles.converterbutton}>
+            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("POUND") }>
               <Text style={styles.converterbuttontext}>POUND</Text>
             </TouchableOpacity> 
 
-            <TouchableOpacity style={styles.converterbutton}>
+            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("DINAR") }>
               <Text style={styles.converterbuttontext}>DINAR</Text>
             </TouchableOpacity> 
 
-            <TouchableOpacity style={styles.converterbutton}>
+            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("YUAN") }>
               <Text style={styles.converterbuttontext}>YUAN</Text>
             </TouchableOpacity> 
 
-            <TouchableOpacity style={styles.converterbutton}>
+            <TouchableOpacity style={styles.converterbutton} onPress={ ()=> this.buttonPressed("RIYAL") }>
               <Text style={styles.converterbuttontext}>RIYAL</Text>
             </TouchableOpacity> 
 
@@ -72,6 +73,7 @@ export default class App extends Component {
 
         </View>
       </SafeAreaView>
+      </TouchableWithoutFeedback>
       
     );
   }
