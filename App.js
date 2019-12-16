@@ -17,11 +17,24 @@ export default class App extends Component {
           keyboardType = "numeric"
           value = {this.state.inputValue}
           selectionColor = "#FFF"
-          onChangeText = { (inputValue) => {this.setState({inputValue})} } 
+          onChangeText = { (inputValue) => {this.setState({inputValue})} }
+          style = {styles.inputContainer} 
         />
   
         <TouchableOpacity>
-          <Text style={styles.submit}>Submit</Text>
+          <Text style={styles.submit}>Dollar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.submit}>Euro</Text>
+        </TouchableOpacity>
+        <TouchableOpacity> 
+          <Text style={styles.submit}>Dinar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity> 
+          <Text style={styles.submit}>Pounds</Text>
+        </TouchableOpacity>
+        <TouchableOpacity> 
+          <Text style={styles.submit}>Yuan</Text>           
         </TouchableOpacity>
   
       </View>
@@ -43,7 +56,16 @@ const styles = StyleSheet.create({
     justifyContent : 'center',
     alignItems : 'center',
     borderColor: "black",
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    flex: 1
+  },
+  inputContainer: {
+    height: 70,
+    marginTop: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: "#c1c1c1",
+    backgroundColor: "0A79DE"
   }
 });
 
