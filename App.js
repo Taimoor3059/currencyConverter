@@ -5,8 +5,13 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue : ""
+      inputValue : "",
+      resultValue: "0.0"
     }
+  }
+
+  buttonPressed = (currency) => {
+
   }
 
   render() {
@@ -22,20 +27,22 @@ export default class App extends Component {
         />
   
         <TouchableOpacity>
-          <Text style={styles.submit}>Dollar</Text>
+          <Text style={styles.submit} value= "Dollar">Dollar</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.submit}>Euro</Text>
+          <Text style={styles.submit} value = "Euro">Euro</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit}>Dinar</Text>
+          <Text style={styles.submit} value = "Dinar">Dinar</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit}>Pounds</Text>
+          <Text style={styles.submit} value = "Pound">Pounds</Text>
         </TouchableOpacity>
         <TouchableOpacity> 
-          <Text style={styles.submit}>Yuan</Text>           
+          <Text style={styles.submit} value = "Yuan">Yuan</Text>           
         </TouchableOpacity>
+
+        <Text>{this.state.inputValue}</Text>
   
       </View>
     );
@@ -43,10 +50,21 @@ export default class App extends Component {
   
 }
 
+var currencyPerRupee = {
+  DOLLAR : 0.0064,
+  POUND: 0.0048,
+  EURO: 0.0058,
+  DINAR: 0.0019,
+  YUAN: 0.045
+}
+
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
