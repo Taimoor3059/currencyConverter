@@ -23,56 +23,62 @@ export default class App extends Component {
   render() {
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.screenview}>
-          <View style={styles.resultcontainer}>
-            <Text style={styles.resultValue}>
-              {this.state.resultValue}
-            </Text>
+        <SafeAreaView style={styles.container}>
+          <View style={styles.screenview}>
+            <View style={styles.resultcontainer}>
+              <Text style={styles.resultValue}>
+                {this.state.resultValue}
+              </Text>
+            </View>
+
+            <View style={styles.inputcontainer}>
+              <TextInput
+                style={styles.input}
+                placeholder= "Enter Value"
+                value = {this.state.inputValue}
+                keyboardType = "numeric"
+                selectionColor = "#FFF"
+                onChangeText = { (inputValue) => {this.setState({inputValue})} }
+              />
+            </View>
+
+            <View style={styles.converterbuttoncontainer}>
+
+              <TouchableOpacity style={styles.converterbutton} onPress= { ()=>this.buttonPressed("DOLLAR") }>
+                <Text style={styles.converterbuttontext}>Dollar</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("EURO") }>
+                <Text style={styles.converterbuttontext}>EURO</Text>
+              </TouchableOpacity> 
+
+              <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("POUND") }>
+                <Text style={styles.converterbuttontext}>POUND</Text>
+              </TouchableOpacity> 
+
+              <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("DINAR") }>
+                <Text style={styles.converterbuttontext}>DINAR</Text>
+              </TouchableOpacity> 
+
+              <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("YUAN") }>
+                <Text style={styles.converterbuttontext}>YUAN</Text>
+              </TouchableOpacity> 
+
+              <TouchableOpacity style={styles.converterbutton} onPress={ ()=> this.buttonPressed("RIYAL") }>
+                <Text style={styles.converterbuttontext}>RIYAL</Text>
+              </TouchableOpacity> 
+
+            </View>
+
+            <View style={styles.clear}>
+              <TouchableOpacity>
+                <Text style={styles.cleartext}>Clear the value</Text>
+              </TouchableOpacity>
+            </View>
+
+
           </View>
-
-          <View style={styles.inputcontainer}>
-            <TextInput
-              style={styles.input}
-              placeholder= "Enter Value"
-              value = {this.state.inputValue}
-              keyboardType = "numeric"
-              selectionColor = "#FFF"
-              onChangeText = { (inputValue) => {this.setState({inputValue})} }
-            />
-          </View>
-
-          <View style={styles.converterbuttoncontainer}>
-
-            <TouchableOpacity style={styles.converterbutton} onPress= { ()=>this.buttonPressed("DOLLAR") }>
-              <Text style={styles.converterbuttontext}>Dollar</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("EURO") }>
-              <Text style={styles.converterbuttontext}>EURO</Text>
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("POUND") }>
-              <Text style={styles.converterbuttontext}>POUND</Text>
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("DINAR") }>
-              <Text style={styles.converterbuttontext}>DINAR</Text>
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>this.buttonPressed("YUAN") }>
-              <Text style={styles.converterbuttontext}>YUAN</Text>
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.converterbutton} onPress={ ()=> this.buttonPressed("RIYAL") }>
-              <Text style={styles.converterbuttontext}>RIYAL</Text>
-            </TouchableOpacity> 
-
-          </View>
-
-
-        </View>
-      </SafeAreaView>
+        </SafeAreaView>
       </TouchableWithoutFeedback>
       
     );
@@ -150,6 +156,20 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 20,
     fontWeight:"bold"
+  },
+  clear: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#0A79DE",
+    height: 200,
+    borderWidth: 2,
+    borderColor: "#c1c1c1",
+    width: 400
+  },
+  cleartext: {
+    fontSize: 20,
+    color: "#fff",
+    fontWeight: "bold"
   }
 });
 
