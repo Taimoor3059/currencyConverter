@@ -33,7 +33,7 @@ export default class App extends Component {
         />
   
         <TouchableOpacity>
-          <Text style={styles.submit} value= "DOLLAR">Dollar</Text>
+          <Text style={styles.submit} onPress={() => this.buttonPressed("DOLLAR")}>Dollar</Text>
         </TouchableOpacity>
         <TouchableOpacity>
           <Text style={styles.submit} value = "EURO">Euro</Text>
