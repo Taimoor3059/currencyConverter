@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>loading</Text>
+      <TouchableOpacity>
+        <Text style={styles.submit}>Submit</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -16,4 +18,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  submit : {
+    backgroundColor : 'red',
+    fontSize: 20,
+    justifyContent : 'center',
+    alignItems : 'center',
+    borderColor: "black",
+    fontWeight: 'bold'
+  }
 });
+
+
+
