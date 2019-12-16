@@ -43,7 +43,7 @@ export default class App extends Component {
 
           <View style={styles.converterbuttoncontainer}>
 
-            <TouchableOpacity style={styles.converterbutton}>
+            <TouchableOpacity style={styles.converterbutton} onPress={ ()=>{this.buttonPressed('DOLLAR')} }>
               <Text style={styles.converterbuttontext}>Dollar</Text>
             </TouchableOpacity>
 
@@ -105,8 +105,8 @@ const styles = StyleSheet.create({
     height: 70,
     marginTop: 20,
     justifyContent: "center",
-    borderColor: "c1c1c1",
-    backgroundColor: "0A79DE",
+    borderColor: "#c1c1c1",
+    backgroundColor: "#0A79DE",
     alignItems: "center",
     borderWidth: 2
   },
@@ -122,14 +122,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 2,
     borderColor: '#c1c1c1',
-    backgroundColor: "0A79DE"
+    backgroundColor: "#0A79DE"
   },
   input: {
     color: "#FFF",
     fontSize: 30
   },
   converterbuttoncontainer: {
-    flex: "row",
+    flexDirection: "row",
     flexWrap: "wrap",
     marginTop: 20,
     borderColor: "#c1c1c1",
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderWidth: 2,
     borderColor: "#c1c1c1",
-    width: "33.33%"
+    width: "33.3%"
   },
   converterbuttontext: {
     color: "#fff",
