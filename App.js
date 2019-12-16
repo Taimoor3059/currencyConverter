@@ -37,6 +37,7 @@ export default class App extends Component {
               value = {this.state.inputValue}
               keyboardType = "numeric"
               selectionColor = "#FFF"
+              onChangeText = { (inputValue) => {this.setState({inputValue})} }
             />
           </View>
 
@@ -85,6 +86,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#FFF"
   },
+  inputcontainer: {
+    marginTop: 10,
+    height: 70,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 2,
+    borderColor: '#c1c1c1',
+    backgroundColor: "0A79DE"
+  }
 
 
 
