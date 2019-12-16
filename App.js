@@ -41,6 +41,14 @@ export default class App extends Component {
             />
           </View>
 
+          <View style={styles.converterbuttoncontainer}>
+
+            <TouchableOpacity style={styles.converterbutton}>
+              <Text style={styles.converterbuttontext}>Dollar</Text>
+            </TouchableOpacity>
+
+          </View>
+
 
         </View>
       </SafeAreaView>
@@ -94,11 +102,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#c1c1c1',
     backgroundColor: "0A79DE"
+  },
+  input: {
+    color: "#FFF",
+    fontSize: 30
+  },
+  converterbuttoncontainer: {
+    
   }
-
-
-
- 
 });
 
 
